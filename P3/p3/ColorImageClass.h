@@ -1,12 +1,13 @@
 #ifndef COLORIMAGECLASS_H
 #define COLORIMAGECLASS_H
+#include "MessageClass.h"
 
 
 // Color image class defines a collection of color pixels in an array
 class ColorImageClass
 {
     private:
-        bool validFileFound = true;
+        bool validFileFound;
         string magicNum;
         int imageRowSize;
         int imageColSize;
@@ -66,13 +67,24 @@ class ColorImageClass
         // inout: N/A
         // output: N/A
         bool writePpmPixels(ofstream &outFile,
-                                             const int imageRowSize,
-                                             const int imageColSize);
+                            const int imageRowSize,
+                            const int imageColSize);
 
         // Write a output PPM file and create a corresponding ColorImageClass
         // inout: N/A
         // output: N/A
         bool writePpmFile(const string &outFname);
+
+        // Decode the message int a PPM file
+        // inout: N/A
+        // output: N/A
+        void decodePpmFile();
+
+        // Encode the message int a PPM file
+        // inout: N/A
+        // output: N/A
+        bool encodePpmFile(RowColumnClass upperLeftLocation,
+                           MessageClass &encodingMessage);
 };
 
 #endif

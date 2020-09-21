@@ -55,6 +55,21 @@ class ColorClass
         // output: N/A
         void setToWhite();
 
+        // Set the color to yellow
+        // input: N/A
+        // output: N/A
+        void setToYellow();
+
+        // Set the color to Magenta
+        // input: N/A
+        // output: N/A
+        void setToMagenta();
+
+        // Set the color to Magenta
+        // input: N/A
+        // output: N/A
+        void setToCyan();
+
         // Set the RGB value to the provided values
         // input: red, green, glue element value
         // output: true if clipping is necessary, false if otherwise
@@ -90,6 +105,9 @@ class ColorClass
         void printComponentValues();
 
 
+
+        // functions below are for project 3
+
         // read RGB values from the infile
         // input: infile
         // output: a boolean showing if in file valid
@@ -99,6 +117,21 @@ class ColorClass
         // input: infile
         // output: a boolean showing if in file valid
         bool writeValueRGB(ofstream &outFile);
+
+        // encode the the message into each pixel
+        // input: encoding value
+        // output: N/A
+        bool encodePixel(const int encodingVal);
+
+        // encode the RGB by increasing or decreasing RGB by 1
+        // input: encoding RGB
+        // output: N/A
+        void encodeRGB(bool isRedEven, int isGreenEven, int isBlueEven);
+
+        // decode the RGB to the description color
+        // input: N/A
+        // output: N/A
+        void decodePixel();
 };
 
 #endif
